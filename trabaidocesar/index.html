@@ -3,13 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Essências de Nicho | Início </title>
+  <title>Essências de Nicho | Início</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .fundo { 
+      background: linear-gradient(#000000, #4c3a2c, #000000);
+    }
+
+    .animar-subindo {
+      opacity: 0;
+      transform: translateY(60px);
+      animation: subirSuave 1.5s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.25s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.55s;
+    }
+
+    .delay-5 {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes subirSuave {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .butao {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      background-color: rgb(116, 93, 62);
+      color: white;
+      margin-left: 25%;
+    }
+
+    .butao:hover {
+      background-color: rgb(116, 93, 62);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 0 45px rgba(206, 192, 177, 0.957);
+      border-color: #ac805a !important;
+    }
+
+    .card-nicho {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 0 20px rgb(116, 93, 62);
+      color: white;
+      border-radius: 15px;
+    }
+
+    .card-nicho:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 45px rgba(160, 128, 86, 0.957);
+    }
+
+    .textonicho {
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .texto {
+      color: rgb(240, 236, 231);
+      margin-top: 0%;
+    }
+
+    .imagem-hero {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .imagem-hero:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(206, 192, 177, 0.45);
+    }
+
+    .imagem-mais-alta {
+      transform: translateY(-47px);
+    }
+
+   .texto-mais-alto {
+     transform: translateY(-40px);
+    }    
+
+
+  </style>
 </head>
-<body class="bg-black text-light"> 
+
+<body class="bg-black text-light">
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html"> Essências de Nicho </a>
+    <a class="navbar-brand fw-bold fs-4" href="index.html">Essências de Nicho</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,87 +132,76 @@
 <header class="fundo py-5">
   <div class="container py-5">
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold">Desbrave o Mundo de Perfumes de nicho e fragrâncias de luxo</h1>
-        <br>  
+
+      <div class="col-lg-6 texto-mais-alto">
+        <h1 class="display-4 fw-bold animar-subindo delay-1">
+          Desbrave o Mundo de Perfumes de Nicho e Fragrâncias de Luxo
+        </h1>
+
         <br>
-        <a href="perfumes.html" class="btn butao btn-lg">Ver catálogo</a>
-        <style>
-          .fundo{
-            background: linear-gradient(#000000, #4c3a2c, #000000);
-          }
-          .btn{
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;  
-            background-color: rgb(116, 93, 62);
-            color: white;
-            margin-left: 25%;
-          }
+        <br>
 
-          .btn:hover{
-            background-color: rgb(116, 93, 62);
-           transform: translateY(-3px);
-           box-shadow: 0 0 45px rgba(206, 192, 177, 0.957);
-           border-color: #ac805a !important;
-          }
-          
-        </style>
+        <a href="perfumes.html" class="btn butao btn-lg animar-subindo delay-2">
+          Ver catálogo
+        </a>
       </div>
 
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <img src="./imagens/chatgpt.png"  class="img-fluid rounded shadow" alt="Perfume de luxo">
+      <div class="col-lg-6 mt-4 mt-lg-0 imagem-mais-alta">
+        <img 
+          src="./imagens/chatgpt.png" 
+          class="img-fluid rounded shadow imagem-hero animar-subindo delay-3" 
+          alt="Perfume de luxo">
       </div>
+
     </div>
   </div>
 </header>
+
 <br>
 
-<center>
- <div class="fundo col-lg-6">
-        <div class="card bg-black text-light ">
-          <div class="card-body">
-            <style>
-            .card-body{ 
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;  
-            box-shadow: 0 0 20px rgb(116, 93, 62);
-            color: white;   
-            border-radius: 15px;   
-          }
-           .card-body:hover{
-           transform: translateY(-3px);
-           box-shadow: 0 0 45px rgba(160, 128, 86, 0.957); 
-          }
-          .textonicho{
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-          }
-          </style>
-            <br>
-            <h1 class="texto"> <center> <b><i> O que seria um Perfume de Nicho?</i> </b> </center> </h1>
-             <style> .texto{
-              color:rgb(240, 236, 231);
-              margin-top: 0%;
-            }
+<section class="py-4">
+  <div class="container">
+    <div class="row justify-content-center">
 
-             </style>
+      <div class="col-lg-8 animar-subindo delay-4">
+        <div class="card bg-black text-light border-0 card-nicho">
+          <div class="card-body">
+
+            <br>
+
+            <h1 class="texto text-center">
+              <b><i>O que seria um Perfume de Nicho?</i></b>
+            </h1>
+
             <br>
             <br>
-             <h2 class="textonicho"><center> Perfumes de Nicho nada mais é uma categoria de perfume de alta qualidade, com distribuição limitada, destinado ao consumo mais seletivo. 
+
+            <h2 class="textonicho text-center">
+              Perfumes de nicho nada mais são do que uma categoria de perfume de alta qualidade,
+              com distribuição limitada, destinada ao consumo mais seletivo.
               <br>
               <br>
-              Os perfumes de nicho são concebidos para atender demandas específicas dos conhecedores e amantes da perfumaria, 
-              que pertencem a um seleto grupo de pessoas exigentes, que além da embalagem e do frasco valorizam o perfume. </center> </h3> 
-             <br>
-             <br>
-            </ul>
+              Os perfumes de nicho são concebidos para atender demandas específicas dos conhecedores
+              e amantes da perfumaria, que pertencem a um seleto grupo de pessoas exigentes, que além
+              da embalagem e do frasco valorizam o perfume.
+            </h2>
+
+            <br>
+            <br>
+
           </div>
         </div>
       </div>
+
     </div>
   </div>
- </center> 
+</section>
+
 <br>
 <br>
 <br>
-<footer class="py-4 bg-black border-top border-secondary text-center">
+
+<footer class="py-4 bg-black border-top border-secondary text-center animar-subindo delay-5">
   <p class="mb-0 text-white">Essências de Nicho © — Catálogo informativo</p>
 </footer>
 

@@ -4,8 +4,288 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Essências de Nicho | Perfumes</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .emcima {
+      background: linear-gradient(black, rgb(11, 9, 7));
+    }
+
+    .fundo {
+      background: linear-gradient(#000000, #2a2018, #000000);
+    }
+
+    /* Animação dos cards ao entrar/sair da tela */
+    .perfume-item {
+      opacity: 0;
+      transform: translateY(70px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .perfume-item.aparecer {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Delay repetido por linha: 1º, 2º e 3º card */
+    .perfume-item:nth-child(3n + 1) {
+      transition-delay: 0.1s;
+    }
+
+    .perfume-item:nth-child(3n + 2) {
+      transition-delay: 0.15s;
+    }
+
+    .perfume-item:nth-child(3n + 3) {
+      transition-delay: 0.2s;
+    }
+
+    /* Base dos cards */
+    .card-perfume,
+    .card-perfume2,
+    .card-perfume3,
+    .card-perfume4,
+    .card-perfume5,
+    .card-perfume6,
+    .card-perfume7,
+    .card-perfume8,
+    .card-perfume9 {
+      filter: grayscale(50%);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
+    }
+
+    .card-perfume img,
+    .card-perfume2 img,
+    .card-perfume3 img,
+    .card-perfume4 img,
+    .card-perfume5 img,
+    .card-perfume6 img,
+    .card-perfume7 img,
+    .card-perfume8 img,
+    .card-perfume9 img {
+      height: 350px;
+      object-fit: cover;
+    }
+
+    /* Hover Vibrato */
+    .card-perfume:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(255, 135, 7, 0.35);
+      border-color: #ffb007 !important;
+    }
+
+    /* Hover Aventus */
+    .card-perfume2 {
+      filter: grayscale(55%);
+    }
+
+    .card-perfume2:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(181, 179, 200, 0.51);
+      border-color: #edebe3 !important;
+    }
+
+    /* Hover Naxos */
+    .card-perfume3:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(170, 165, 129, 0.535);
+      border-color: #cfc486 !important;
+    }
+
+    /* Hover Layton */
+    .card-perfume4:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(45, 75, 114, 0.877);
+      border-color: #1e3871 !important;
+    }
+
+    /* Hover Ombre Nomade */
+    .card-perfume5:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(88, 55, 23, 0.957);
+      border-color: #d38236 !important;
+    }
+
+    /* Hover Hundred Silent Ways */
+    .card-perfume6:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(189, 8, 8, 0.957);
+      border-color: #dc0e2a !important;
+    }
+
+    /* Hover Tom Ford */
+    .card-perfume7:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(113, 113, 114, 0.51);
+      border-color: #8d8d8d !important;
+    }
+
+    /* Hover JPG */
+    .card-perfume8:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(244, 189, 87, 0.78);
+      border-color: #dca40b !important;
+    }
+
+    /* Hover Eros Flame */
+    .card-perfume9:hover {
+      filter: grayscale(0%);
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(235, 3, 3, 0.797);
+      border-color: #d24e15 !important;
+    }
+
+    /* Botões */
+    .btn1 {
+      color: #cfc486;
+      background-color: rgb(13, 73, 13);
+      max-width: 150px;
+    }
+
+    .btn1:hover {
+      color: rgb(255, 167, 51);
+      box-shadow: 0 0 25px rgb(255, 182, 73);
+      border-color: rgba(0, 128, 0, 0.602);
+      background-color: rgb(22, 122, 22);
+    }
+
+    .btn2 {
+      background: linear-gradient(90deg, rgba(174, 194, 209, 1) 0%, rgb(81, 81, 81) 100%);
+      max-width: 150px;
+    }
+
+    .btn2:hover {
+      box-shadow: 0 0 15px #ffffff;
+      background: linear-gradient(90deg, rgba(174, 194, 209, 1) 0%, rgb(81, 81, 81) 100%);
+    }
+
+    .btn3 {
+      color: rgb(255, 255, 255);
+      border: rgb(240, 191, 100);
+      background: linear-gradient(90deg, rgb(202, 203, 175) 0%, rgb(135, 201, 115) 100%);
+      max-width: 150px;
+    }
+
+    .btn3:hover {
+      box-shadow: 0 0 26px #ffffff;
+      background: linear-gradient(90deg, rgb(202, 203, 175) 0%, rgb(135, 201, 115) 100%);
+      border-color: wheat;
+    }
+
+    .btn4 {
+      color: rgb(193, 207, 220);
+      border: rgb(179, 213, 245);
+      background-color: #3b74af;
+      max-width: 150px;
+    }
+
+    .btn4:hover {
+      box-shadow: 0 0 25px #0f6aa0;
+      background-color: #67aaf1;
+      border-color: rgb(179, 213, 245);
+    }
+
+    .btn5 {
+      color: rgb(250, 217, 161);
+      background-color: #aa5a21;
+      max-width: 150px;
+    }
+
+    .btn5:hover {
+      box-shadow: 0 0 25px #f8af27;
+      background-color: #9a5520;
+    }
+
+    .btn6 {
+      color: rgb(255, 211, 211);
+      background-color: #aa2121;
+      max-width: 150px;
+    }
+
+    .btn6:hover {
+      box-shadow: 0 0 25px #f2340a;
+      background-color: #9a2020;
+    }
+
+    .btn7 {
+      border-color: black;
+      color: rgb(250, 217, 161);
+      background-image: linear-gradient(to right, #ca051d, #a50424, #800b25, #5a1021, #361019, #3c151d, #421b20, #482024, #7c342f, #af4e31, #e4971c, #ffd000);
+      max-width: 150px;
+    }
+
+    .btn7:hover {
+      border-color: black;
+      box-shadow: 0 0 25px #f84d27;
+      background-color: #9a5520;
+    }
+
+    .btn8 {
+      border-color: rgb(248, 145, 0);
+      color: rgb(250, 217, 161);
+      background-color: rgb(248, 145, 0);
+      max-width: 150px;
+    }
+
+    .btn8:hover {
+      color: black;
+      box-shadow: 0 0 25px #f84d27;
+      background-color: #ffc655;
+    }
+
+    .btn9 {
+      border-color: rgb(248, 62, 0);
+      color: rgb(254, 194, 92);
+      background-color: #ff0d00;
+      max-width: 150px;
+    }
+
+    .btn9:hover {
+      color: rgb(255, 216, 164);
+      box-shadow: 0 0 30px #ff7b00;
+      background-color: #ff0d00;
+    }
+
+    /* Cores dos nomes das marcas */
+    .textosospiro {
+      color: #1b8e13;
+    }
+
+    .textocreed {
+      color: #b4b4b4;
+    }
+
+    .textoxerjoff {
+      color: #d3ffa9;
+    }
+
+    .textomarly {
+      color: #3c7fb6;
+    }
+
+    .textonishane {
+      color: red;
+    }
+
+    .textotomford {
+      color: rgb(159, 159, 159);
+    }
+
+    .textoerosflame {
+      color: rgb(238, 39, 39);
+    }
+  </style>
 </head>
+
 <body class="fundo bg-black text-light">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
@@ -26,7 +306,7 @@
     </div>
   </div>
 </nav>
-
+<br>
 <section class="emcima py-5">
   <div class="container text-center">
     <h1 class="fw-bold">Perfumes</h1>
@@ -37,90 +317,19 @@
 <section class="py-3">
   <div class="container">
     <div class="row g-4">
-     
+
       <!-- Vibrato -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume h-100 bg-black border-black">
-           <style>
-
-            .perfume-item {
-              opacity: 0;
-              transform: translateY(45px);
-              animation: subirSuave 0.8s ease forwards;
-            }
-
-            .perfume-item:nth-child(1) {
-              animation-delay: 0.1s;
-            }
-            @keyframes subirSuave {
-              from {
-                opacity: 0;
-                transform: translateY(45px);
-              }
-
-              to {
-                opacity: 1;
-                transform: translateY(0);
-              }
-            }
-            
-           .emcima{
-              background: linear-gradient(black, rgb(11,9,7));
-           }
-
-
-            .fundo{
-              background: linear-gradient(#000000, #2a2018, #000000);
-            }
-
-            .card-perfume {
-            filter:grayscale(50%);  
-            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-            }
-
-            .card-perfume:hover {
-            filter:grayscale(0%);  
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(255, 135, 7, 0.35);
-            border-color: #ffb007 !important;
-            }
-
-            .card-perfume img {
-            height: 350px;
-            object-fit: cover; 
-            }
-
-            .btn1 {
-              color:#cfc486;
-              background-color: rgb(13, 73, 13);
-              max-width: 150px;
-            }
-            
-            .btn1:hover{  
-              color:rgb(255, 167, 51); 
-              box-shadow: 0 0 25px rgb(255, 182, 73);  
-              border-color: rgba(0, 128, 0, 0.602);  
-              background-color: rgb(22, 122, 22);
-            }
-             
-            .textosospiro{
-              color:#1b8e13;
-            }
-
-
-    </style> 
-          <img 
-            src="./imagens/vibrato.jpg" 
-            class="card-img-top" 
-            alt="Sospiro Vibrato">
+          <img src="./imagens/vibrato.jpg" class="card-img-top" alt="Sospiro Vibrato">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-white">Vibrato</h5>
             <h6 class="textosospiro">Sospiro</h6>
             <p class="text-secondary">Notas cítricas, gengibre, âmbar e cedro.</p>
-            <center>
-            <a href="vibrato.html" class="btn btn1 mt-auto"> Ver notas e uso </a>
-           </center>
+            <div class="text-center mt-auto">
+              <a href="vibrato.html" class="btn btn1">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -128,56 +337,15 @@
       <!-- Aventus -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume2 h-100 bg-black text-light border-black">
-          <style>
-
-         .perfume-item:nth-child(2) {
-             animation-delay: 0.15s;
-         }
-            
-         .card-perfume2{
-          filter:grayscale(55%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume2:hover {
-        filter:grayscale(0%);
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(181, 179, 200, 0.51);
-        border-color: #edebe3 !important;
-        }   
-
-        .card-perfume2 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-       .btn2 {  
-       background: linear-gradient(90deg,rgba(174, 194, 209, 1) 0%, rgb(81, 81, 81) 100%);
-       max-width: 150px;
-       }
-
-       .btn2:hover{
-       box-shadow: 0 0 15px #ffffff;  
-       background: linear-gradient(90deg,rgba(174, 194, 209, 1) 0%, rgb(81, 81, 81) 100%);
-       border-color:linear-gradient(90deg,rgba(174, 194, 209, 1) 0%, rgb(81, 81, 81) 100%);
-       }
-
-       .textocreed{
-        color:#b4b4b4
-       }
-        </style>
-          <img
-            src="./imagens/aventus.jpg" 
-            class="card-img-top" 
-            alt="Aventus">
+          <img src="./imagens/aventus.jpg" class="card-img-top" alt="Aventus">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Aventus</h5>
             <h6 class="textocreed">Creed</h6>
             <p class="text-secondary">Notas de abacaxi, bergamota, madeira e musk.</p>
-            <center>
-            <a href="aventus.html" class="btn btn2 mt-auto border-black text-white">Ver notas e uso</a>
-            </center>
+            <div class="text-center mt-auto">
+              <a href="aventus.html" class="btn btn2 border-black text-white">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -185,59 +353,15 @@
       <!-- Naxos -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume3 h-100 bg-black text-light border-black">
-        <style> 
-
-          .perfume-item:nth-child(3) {
-              animation-delay: 0.2s;
-            }
-   
-         .card-perfume3{
-          filter:grayscale(50%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume3:hover {
-        filter:grayscale(0%); 
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(170, 165, 129, 0.535);
-        border-color: #cfc486 !important;
-        }   
-
-        .card-perfume3 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-       .btn3 {
-       color:rgb(255, 255, 255);
-       border:rgb(240, 191, 100);       
-       background: linear-gradient(90deg,rgb(202, 203, 175) 0%, rgb(135, 201, 115) 100%);
-       max-width: 150px;
-       }
-
-       .btn3:hover{
-       box-shadow: 0 0 26px #ffffff;  
-       background: linear-gradient(90deg,rgb(202, 203, 175) 0%, rgb(135, 201, 115) 100%);
-       border-color:wheat
-       }
-
-       .textoxerjoff{
-        color: #d3ffa9;
-       }
-
-        </style>           
-          <img 
-            src="./imagens/Xerjoff-Naxos-3-Square.webp" 
-            class="card-img-top" 
-            alt="Naxos">
+          <img src="./imagens/Xerjoff-Naxos-3-Square.webp" class="card-img-top" alt="Naxos">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Naxos</h5>
             <h6 class="textoxerjoff">Xerjoff</h6>
             <p class="text-secondary">Notas de mel, tabaco, lavanda, baunilha e cítricos.</p>
-            <center>
-            <a href="naxos.html" class="btn btn3 mt-auto">Ver notas e uso</a>
-            </center>
+            <div class="text-center mt-auto">
+              <a href="naxos.html" class="btn btn3">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -245,58 +369,15 @@
       <!-- Layton -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume4 h-100 bg-black text-light border-black">
-         <style>
-
-         .perfume-item:nth-child(4) {
-              animation-delay: 0.25s;
-         }
-
-         .card-perfume4{
-          filter:grayscale(50%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume4:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(45, 75, 114, 0.877);
-        border-color: #1e3871 !important;
-        }   
-
-        .card-perfume4 img {
-        height: 350px;
-        object-fit: cover;
-        }
-        
-       .btn4 {
-       color:rgb(193, 207, 220);
-       border:rgb(179, 213, 245);      
-       background-color:#3b74af;
-       max-width: 150px;
-       }
-
-       .btn4:hover{
-       box-shadow: 0 0 25px #0f6aa0;  
-       background-color:#67aaf1;
-       border-color:rgb(179, 213, 245);
-       }
-
-       .textomarly{
-        color:#3c7fb6;
-       }
-        </style>   
-          <img 
-            src="./imagens/marly.webp" 
-            class="card-img-top" 
-            alt="Layton">
+          <img src="./imagens/marly.webp" class="card-img-top" alt="Layton">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Layton</h5>
             <h6 class="textomarly">Parfums de Marly</h6>
             <p class="text-secondary">Notas de maçã, lavanda, baunilha e madeira.</p>
-            <center>
-            <a href="layton.html" class="btn btn4 mt-auto">Ver notas e uso</a>
-            </center>
+            <div class="text-center mt-auto">
+              <a href="layton.html" class="btn btn4">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -304,284 +385,82 @@
       <!-- Ombre Nomade -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume5 h-100 bg-black text-light border-black">
-         <style>
-
-          .perfume-item:nth-child(5) {
-              animation-delay: 0.3s;
-            }
-
-         .card-perfume5{
-          filter:grayscale(50%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume5:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(88, 55, 23, 0.957);
-        border-color: #d38236 !important;
-        }   
-
-        .card-perfume5 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-      .btn5 {
-       color:rgb(250, 217, 161);    
-       background-color:#aa5a21;
-       max-width: 150px;
-       }
-
-       .btn5:hover{
-       box-shadow: 0 0 25px #f8af27;  
-       background-color:#9a5520;
-       }
-
-        </style>   
-          <img 
-            src="./imagens/lvombre.webp" 
-            class="card-img-top" 
-            alt="Ombre Nomade">
+          <img src="./imagens/lvombre.webp" class="card-img-top" alt="Ombre Nomade">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Ombre Nomade</h5>
-            <h6> <span style="color:#8e4e13;"> Louis </span> <span style="color:#e58508;"> Vuitton</span></h6>
+            <h6>
+              <span style="color:#8e4e13;">Louis</span>
+              <span style="color:#e58508;">Vuitton</span>
+            </h6>
             <p class="text-secondary">Notas de oud, rosa, framboesa e incenso.</p>
-            <center>
-            <a href="ombre-nomade.html" class="btn btn5 mt-auto">Ver notas e uso</a>
-            </center>
+            <div class="text-center mt-auto">
+              <a href="ombre-nomade.html" class="btn btn5">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Hundred Silent Ways  -->
+      <!-- Hundred Silent Ways -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume6 h-100 bg-black text-light border-black">
-        <style>
-        
-         .perfume-item:nth-child(6) {
-           animation-delay: 0.4s;
-          }
-
-         .card-perfume6{
-          filter:grayscale(50%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume6:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(189, 8, 8, 0.957);
-        border-color: #dc0e2a !important;
-        }   
-
-        .card-perfume6 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-
-      .btn6 {
-       color:rgb(255, 211, 211);    
-       background-color:#aa2121;
-       max-width: 150px;
-       }
-
-       .btn6:hover{
-       box-shadow: 0 0 25px #f2340a;  
-       background-color:#9a2020;
-       }
-
-       .textonishane{
-        color:red;
-       }
-        </style>  
-          <img 
-            src="./imagens/nishanevermelho.webp" 
-            class="card-img-top" 
-            alt="Hacivat">
+          <img src="./imagens/nishanevermelho.webp" class="card-img-top" alt="Hundred Silent Ways">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Hundred Silent Ways</h5>
             <h6 class="textonishane">Nishane</h6>
             <p class="text-secondary">Notas de tuberosa, pêssego e baunilha.</p>
-            <center>
-            <a href="hundred.html" class="btn btn6 mt-auto">Ver notas e uso</a>
-            </center>
+            <div class="text-center mt-auto">
+              <a href="hundred.html" class="btn btn6">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Tom Ford -->
-       <div class="col-md-6 col-lg-4 perfume-item">
+      <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume7 h-100 bg-black text-light border-black">
-          <style>
-
-           .perfume-item:nth-child(7) {
-            animation-delay: 0.1s;
-          }
-   
-         .card-perfume7{
-          filter:grayscale(50%);  
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume7:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(113, 113, 114, 0.51);
-        border-color: #8d8d8d !important;
-        }   
-
-        .card-perfume7 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-      .btn7 {
-       border-color: black;
-       color:rgb(250, 217, 161);    
-       background-image: linear-gradient(to right , #ca051d, #a50424, #800b25, #5a1021, #361019, #3c151d, #421b20, #482024, #7c342f, #af4e31, #e4971c, #ffd000);
-       max-width: 150px;
-       }
-
-       .btn7:hover{
-       border-color: black;
-       box-shadow: 0 0 25px #f84d27;  
-       background-color:#9a5520;
-       }
-
-       .textotomford{
-        color:rgb(159, 159, 159);
-       }
-        </style>
-          <img 
-            src="./imagens/tomford.webp" 
-            class="card-img-top" 
-            alt="Aventus">
+          <img src="./imagens/tomford.webp" class="card-img-top" alt="Black Lacquer">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Black Lacquer</h5>
             <h6 class="textotomford">Tom Ford</h6>
-            <p class="text-secondary">Notas de Vinil, rum e pimenta preta.</p>
-            <center>
-            <a href="tomford.html" class="btn btn7 mt-auto">Ver notas e uso</a>
-            </center>
+            <p class="text-secondary">Notas de vinil, rum e pimenta preta.</p>
+            <div class="text-center mt-auto">
+              <a href="tomford.html" class="btn btn7">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Absolu -->
-       <div class="col-md-6 col-lg-4 perfume-item">
+      <!-- Elixir Absolu -->
+      <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume8 h-100 bg-black text-light border-black">
-          <style>
-          
-          .perfume-item:nth-child(8) {
-           animation-delay: 0.15s;
-         }
-     
-         .card-perfume8{
-          filter:grayscale(50%); 
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume8:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(244, 189, 87, 0.78);
-        border-color: #dca40b !important;
-        }   
-
-        .card-perfume8 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-        .btn8 {
-       border-color: rgb(248, 145, 0);
-       color:rgb(250, 217, 161);    
-       background-color: rgb(248, 145, 0);
-       max-width: 150px;
-       }
-
-       .btn8:hover{
-       color:black;
-       box-shadow: 0 0 25px #f84d27;  
-       background-color:#ffc655;
-       }
-        </style>
-          <img 
-            src="./imagens/jpgeabsolu.jpg.jpg" 
-            class="card-img-top" 
-            alt="Aventus">
+          <img src="./imagens/jpgeabsolu.jpg.jpg" class="card-img-top" alt="Elixir Absolu">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Elixir Absolu</h5>
-            <h6 class="text-warning">Jean Paul Gautillier</h6>
-            <p class="text-secondary">Notas ameixa, lavanda, tâmara e tabaco.</p>
-            <center>
-            <a href="absolu.html" class="btn btn8 mt-auto">Ver notas e uso</a>
-            </center>
+            <h6 class="text-warning">Jean Paul Gaultier</h6>
+            <p class="text-secondary">Notas de ameixa, lavanda, tâmara e tabaco.</p>
+            <div class="text-center mt-auto">
+              <a href="absolu.html" class="btn btn8">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Eros Flame -->
-       <div class="col-md-6 col-lg-4 perfume-item">
+      <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-perfume9 h-100 bg-black text-light border-black">
-          <style>
-
-          .perfume-item:nth-child(9) {
-           animation-delay: 0.2s;
-         }
-   
-         .card-perfume9{
-          filter:grayscale(50%); 
-          transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, filter 0.7s ease;
-          }
-
-        .card-perfume9:hover {
-        filter:grayscale(0%);  
-        transform: translateY(-10px);
-        box-shadow: 0 0 30px rgba(235, 3, 3, 0.797);
-        border-color: #d24e15 !important;
-        }   
-
-        .card-perfume9 img {
-        height: 350px;
-        object-fit: cover;
-        }
-
-        .btn9 {
-         border-color: rgb(248, 62, 0);
-         color:rgb(254, 194, 92);    
-         background-color:#ff0d00;
-         max-width: 150px;
-         }
- 
-        .btn9:hover{
-        color:rgb(255, 216, 164);
-        box-shadow: 0 0 30px #ff7b00;  
-        background-color:#ff0d00;
-        }
-
-        .textoerosflame{
-         color:rgb(238, 39, 39); 
-        }
-        </style>
-          <img 
-            src="./imagens/erosflame.jpeg" 
-            class="card-img-top" 
-            alt="Aventus">
+          <img src="./imagens/erosflame.jpeg" class="card-img-top" alt="Eros Flame">
 
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Eros Flame</h5>
             <h6 class="textoerosflame">Versace</h6>
-            <p class="text-secondary">Notas limão, tangerina, pimenta preta e alecrim.</p>
-            <center>
-            <a href="erosflame.html" class="btn btn9 mt-auto">Ver notas e uso</a>
-            </center>
+            <p class="text-secondary">Notas de limão, tangerina, pimenta preta e alecrim.</p>
+            <div class="text-center mt-auto">
+              <a href="erosflame.html" class="btn btn9">Ver notas e uso</a>
+            </div>
           </div>
         </div>
       </div>
@@ -589,10 +468,30 @@
     </div>
   </div>
 </section>
-
+<br>
 <footer class="py-4 bg-black border-top border-black text-center">
-  <p class="mb-0 text-  ">Essências de Nicho © — Catálogo informativo</p>
+  <p class="mb-0 text-white">Essências de Nicho © — Catálogo informativo</p>
 </footer>
+
+<script>
+  const cardsPerfume = document.querySelectorAll('.perfume-item');
+
+  const observadorCards = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('aparecer');
+      } else {
+        entrada.target.classList.remove('aparecer');
+      }
+    });
+  }, {
+    threshold: 0.21
+  });
+
+  cardsPerfume.forEach((card) => {
+    observadorCards.observe(card);
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
