@@ -5,13 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Essências de Nicho | Marcas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+  .logo-card {
+    height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .logo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
+    border-color: #ffffff;
+  }
+
+  .logo-card img {
+    filter:saturate(0%);
+    max-height: 180px;
+    max-width: 90%;
+    object-fit: contain;
+  }
+  </style>
 </head>
 
-<body class="bg-dark text-light">
+<body class="bg-black text-light">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold fs-4" href="index.html">Essências de Nicho</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,77 +48,106 @@
   </div>
 </nav>
 
-<section class="py-5 bg-black">
-  <div class="container text-center">
-    <h1 class="fw-bold">Marcas</h1>
-    <p class="text-secondary">Casas e marcas presentes no catálogo.</p>
+<section class="bg-black d-flex flex-column" style="min-height: calc(100vh - 82px);">
+
+  <div class="container text-center pt-4 pb-3">
+    <br>
+    <h1 class="fw-bold mb-2">Marcas</h1> 
+    <h4 class="text-secondary mb-0">Consulte as marcas presentes no catálogo.</h4>
   </div>
-</section>
 
-<section class="py-5">
-  <div class="container">
-    <div class="row g-4">
+  <div class="container flex-grow-1 d-flex align-items-center pb-4">
+  <div class="row row-cols-3 g-3 w-100 justify-content-center">
 
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Louis Vuitton</h4>
-            <p class="text-secondary">Marca de luxo conhecida por fragrâncias exclusivas, modernas e sofisticadas.</p>
-          </div>
+    <!-- Louis Vuitton -->
+    <div class="col">
+      <a href="https://br.louisvuitton.com/por-br/perfumes/todos-os-perfumes/_/N-t1hojbvl" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logoLV.jpg" class="img-fluid mx-auto" alt="Louis Vuitton">
         </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Creed</h4>
-            <p class="text-secondary">Casa tradicional, famosa por perfumes elegantes e refinados.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Nishane</h4>
-            <p class="text-secondary">Marca de nicho com fragrâncias intensas, criativas e de grande presença.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Xerjoff</h4>
-            <p class="text-secondary">Casa italiana associada a perfumes luxuosos, doces e sofisticados.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Sospiro</h4>
-            <p class="text-secondary">Marca com fragrâncias marcantes, elegantes e bastante refinadas.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card bg-black text-light border-secondary h-100">
-          <div class="card-body">
-            <h4 class="text-warning">Parfums de Marly</h4>
-            <p class="text-secondary">Marca conhecida por perfumes intensos, doces, elegantes e muito populares no luxo.</p>
-          </div>
-        </div>
-      </div>
-
+      </a>
     </div>
+
+    <!-- Creed -->
+    <div class="col">
+      <a href="https://www.creedfragrance.com/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logocreed.jpg" class="img-fluid mx-auto" alt="Creed">
+        </div>
+      </a>
+    </div>
+
+    <!-- Nishane -->
+    <div class="col">
+      <a href="https://nishane.com/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logonishane.jpg" class="img-fluid mx-auto" alt="Nishane">
+        </div>
+      </a>
+    </div>
+
+    <!-- Xerjoff -->
+    <div class="col">
+      <a href="https://www.xerjoff.com/en-br" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logoxerjoff.webp" class="img-fluid mx-auto" alt="Xerjoff">
+        </div>
+      </a>
+    </div>
+
+    <!-- Sospiro -->
+    <div class="col">
+      <a href="https://sospirointernational.com/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logosospiro.png" class="img-fluid mx-auto" alt="Sospiro">
+        </div>
+      </a>
+    </div>
+
+    <!-- Parfums de Marly -->
+    <div class="col">
+      <a href="https://parfums-de-marly.com/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logomarly.webp" class="img-fluid mx-auto" alt="Parfums de Marly">
+        </div>
+      </a>
+    </div>
+
+    <!-- Jean Paul Gaultier -->
+    <div class="col">
+      <a href="https://www.jeanpaulgaultier.com/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logojpg.jpg" class="img-fluid mx-auto" alt="Jean Paul Gaultier">
+        </div>
+      </a>
+    </div>
+
+    <!-- Tom Ford -->
+    <div class="col">
+      <a href="https://www.tomfordbeauty.com/collections/fragrance" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logotomford.png" class="img-fluid mx-auto" alt="Tom Ford">
+        </div>
+      </a>
+    </div>
+
+    <!-- Versace -->
+    <div class="col">
+      <a href="https://www.versace.com/br/en/men/accessories/fragrances-body-care/eros-flame/" target="_blank" class="text-decoration-none">
+        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+          <img src="./imagens/logoversace.jpg" class="img-fluid mx-auto" alt="Versace">
+        </div>
+      </a>
+    </div>
+
   </div>
+</div>
 </section>
 
-<footer class="py-4 bg-black border-top border-secondary text-center">
-  <p class="mb-0 text-white">Essências de Nicho — Catálogo informativo</p>
+<footer class="py-3 bg-black border-top border-white text-center">
+  <br>
+  <h4 class="mb-0 text-white">Essências de Nicho © — Catálogo informativo</h4>
+  <br>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
