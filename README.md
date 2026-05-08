@@ -1,6 +1,6 @@
 # trabaidocesar
 Este trabalho foi feito para testar a capacidade do aluno
-no uso de git, htmml, css e bootstrap ao desenvolver um site
+no uso de git, html, css e bootstrap ao desenvolver um site
 interativo para uma apresentação.
 
 Este site foi feito com a intenção de criar um catálogo
