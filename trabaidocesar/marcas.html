@@ -4,26 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Essências de Nicho | Marcas</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-  .logo-card {
-    height: 200px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  }
+    .animar-subindo {
+      opacity: 0;
+      transform: translateY(55px);
+      animation: subirSuave 0.8s ease forwards;
+    }
 
-  .logo-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
-    border-color: #ffffff;
-  }
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
 
-  .logo-card img {
-    filter:saturate(0%);
-    max-height: 180px;
-    max-width: 90%;
-    object-fit: contain;
-  }
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-5 {
+      animation-delay: 0.5s;
+    }
+
+    .delay-6 {
+      animation-delay: 0.6s;
+    }
+
+    .delay-7 {
+      animation-delay: 0.7s;
+    }
+
+    .delay-8 {
+      animation-delay: 0.8s;
+    }
+
+    .delay-9 {
+      animation-delay: 0.9s;
+    }
+
+    .delay-10 {
+      animation-delay: 1s;
+    }
+
+    @keyframes subirSuave {
+      from {
+        opacity: 0;
+        transform: translateY(55px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo-card {
+      height: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(254, 255, 242, 0.48);
+      border-color: #ffffff !important;
+    }
+
+    .logo-card img {
+      filter: saturate(0%);
+      max-height: 180px;
+      max-width: 90%;
+      object-fit: contain;
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .logo-card:hover img {
+      filter: saturate(100%);
+      transform: scale(1.03);
+    }
   </style>
 </head>
 
@@ -52,96 +117,96 @@
 
   <div class="container text-center pt-4 pb-3">
     <br>
-    <h1 class="fw-bold mb-2">Marcas</h1> 
+    <h1 class="fw-bold mb-2">Marcas</h1>
     <h4 class="text-secondary mb-0">Consulte as marcas presentes no catálogo.</h4>
   </div>
 
   <div class="container flex-grow-1 d-flex align-items-center pb-4">
-  <div class="row row-cols-3 g-3 w-100 justify-content-center">
+    <div class="row row-cols-3 g-3 w-100 justify-content-center">
 
-    <!-- Louis Vuitton -->
-    <div class="col">
-      <a href="https://br.louisvuitton.com/por-br/perfumes/todos-os-perfumes/_/N-t1hojbvl" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logoLV.jpg" class="img-fluid mx-auto" alt="Louis Vuitton">
-        </div>
-      </a>
+      <!-- Louis Vuitton -->
+      <div class="col animar-subindo delay-2">
+        <a href="https://br.louisvuitton.com/por-br/perfumes/todos-os-perfumes/_/N-t1hojbvl" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logoLV.jpg" class="img-fluid mx-auto" alt="Louis Vuitton">
+          </div>
+        </a>
+      </div>
+
+      <!-- Creed -->
+      <div class="col animar-subindo delay-3">
+        <a href="https://www.creedfragrance.com/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logocreed.jpg" class="img-fluid mx-auto" alt="Creed">
+          </div>
+        </a>
+      </div>
+
+      <!-- Nishane -->
+      <div class="col animar-subindo delay-4">
+        <a href="https://nishane.com/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logonishane.jpg" class="img-fluid mx-auto" alt="Nishane">
+          </div>
+        </a>
+      </div>
+
+      <!-- Xerjoff -->
+      <div class="col animar-subindo delay-5">
+        <a href="https://www.xerjoff.com/en-br" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logoxerjoff.webp" class="img-fluid mx-auto" alt="Xerjoff">
+          </div>
+        </a>
+      </div>
+
+      <!-- Sospiro -->
+      <div class="col animar-subindo delay-6">
+        <a href="https://sospirointernational.com/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logosospiro.png" class="img-fluid mx-auto" alt="Sospiro">
+          </div>
+        </a>
+      </div>
+
+      <!-- Parfums de Marly -->
+      <div class="col animar-subindo delay-7">
+        <a href="https://parfums-de-marly.com/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logomarly.webp" class="img-fluid mx-auto" alt="Parfums de Marly">
+          </div>
+        </a>
+      </div>
+
+      <!-- Jean Paul Gaultier -->
+      <div class="col animar-subindo delay-8">
+        <a href="https://www.jeanpaulgaultier.com/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logojpg.jpg" class="img-fluid mx-auto" alt="Jean Paul Gaultier">
+          </div>
+        </a>
+      </div>
+
+      <!-- Tom Ford -->
+      <div class="col animar-subindo delay-9">
+        <a href="https://www.tomfordbeauty.com/collections/fragrance" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logotomford.png" class="img-fluid mx-auto" alt="Tom Ford">
+          </div>
+        </a>
+      </div>
+
+      <!-- Versace -->
+      <div class="col animar-subindo delay-10">
+        <a href="https://www.versace.com/br/en/men/accessories/fragrances-body-care/eros-flame/" target="_blank" class="text-decoration-none">
+          <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
+            <img src="./imagens/logoversace.jpg" class="img-fluid mx-auto" alt="Versace">
+          </div>
+        </a>
+      </div>
+
     </div>
-
-    <!-- Creed -->
-    <div class="col">
-      <a href="https://www.creedfragrance.com/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logocreed.jpg" class="img-fluid mx-auto" alt="Creed">
-        </div>
-      </a>
-    </div>
-
-    <!-- Nishane -->
-    <div class="col">
-      <a href="https://nishane.com/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logonishane.jpg" class="img-fluid mx-auto" alt="Nishane">
-        </div>
-      </a>
-    </div>
-
-    <!-- Xerjoff -->
-    <div class="col">
-      <a href="https://www.xerjoff.com/en-br" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logoxerjoff.webp" class="img-fluid mx-auto" alt="Xerjoff">
-        </div>
-      </a>
-    </div>
-
-    <!-- Sospiro -->
-    <div class="col">
-      <a href="https://sospirointernational.com/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logosospiro.png" class="img-fluid mx-auto" alt="Sospiro">
-        </div>
-      </a>
-    </div>
-
-    <!-- Parfums de Marly -->
-    <div class="col">
-      <a href="https://parfums-de-marly.com/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logomarly.webp" class="img-fluid mx-auto" alt="Parfums de Marly">
-        </div>
-      </a>
-    </div>
-
-    <!-- Jean Paul Gaultier -->
-    <div class="col">
-      <a href="https://www.jeanpaulgaultier.com/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logojpg.jpg" class="img-fluid mx-auto" alt="Jean Paul Gaultier">
-        </div>
-      </a>
-    </div>
-
-    <!-- Tom Ford -->
-    <div class="col">
-      <a href="https://www.tomfordbeauty.com/collections/fragrance" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logotomford.png" class="img-fluid mx-auto" alt="Tom Ford">
-        </div>
-      </a>
-    </div>
-
-    <!-- Versace -->
-    <div class="col">
-      <a href="https://www.versace.com/br/en/men/accessories/fragrances-body-care/eros-flame/" target="_blank" class="text-decoration-none">
-        <div class="card logo-card bg-black border-secondary text-center d-flex align-items-center justify-content-center p-2">
-          <img src="./imagens/logoversace.jpg" class="img-fluid mx-auto" alt="Versace">
-        </div>
-      </a>
-    </div>
-
   </div>
-</div>
 </section>
 
 <footer class="py-3 bg-black border-top border-white text-center">
