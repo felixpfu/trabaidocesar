@@ -8,14 +8,187 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    .fundo { 
-      background: linear-gradient(#000000, #4c3a2c, #000000);
+    body {
+      background-color: #000;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .pagina {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 75% 40%, rgba(138, 92, 45, 0.22), transparent 35%),
+        radial-gradient(circle at 18% 58%, rgba(90, 61, 38, 0.45), transparent 38%),
+        linear-gradient(90deg, #000000 0%, #120d09 42%, #000000 100%);
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.96);
+    }
+
+    .navbar-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #c59a62 !important;
+      letter-spacing: 0.4px;
+    }
+
+    .nav-link {
+      color: #a7a7a7 !important;
+      margin-left: 22px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 2px;
+      height: 2px;
+      background: #c59a62;
+      border-radius: 20px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+
+    .linha-decorativa {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a87b4d, transparent);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .linha-decorativa::after {
+      content: "◇";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #c59a62;
+      background-color: #100b08;
+      padding: 0 9px;
+      font-size: 18px;
+    }
+
+    .titulo-principal {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 69px;
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #f4f1ed;
+      text-shadow: 0 0 22px rgba(0, 0, 0, 0.85);
+    }
+
+    .dourado {
+      color: #c59a62;
+      font-size:70px;
+    }
+
+    .subtitulo {
+      max-width: 560px;
+      color: #d1c8bd;
+      font-size: 25px;
+      line-height: 1.7;
+      margin-top: 28px;
+    }
+
+    .botao-catalogo {
+      margin-top: 30px;
+      padding: 15px 38px;
+      border-radius: 8px;
+      border: 1px solid rgba(197, 154, 98, 0.55);
+      background: linear-gradient(135deg, #8d6635, #5f421f);
+      color: white;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .botao-catalogo:hover {
+      color: white;
+      transform: translateY(-4px);
+      background: linear-gradient(135deg, #a77b43, #6e4d25);
+      box-shadow: 0 0 38px rgba(197, 154, 98, 0.48);
+    }
+
+    .seta {
+      margin-left: 14px;
+      font-size: 1.5rem;
+    }
+
+    .imagem-box {
+      position: relative;
+      transform: translateY(-18px);
+    }
+
+    .imagem-hero {
+      width: 100%;
+      max-height: 720px;
+      object-fit: cover;
+      border-radius: 8px;
+      filter: brightness(0.88) contrast(1.12);
+      box-shadow: 0 0 45px rgba(0, 0, 0, 0.9), 0 0 65px rgba(138, 92, 45, 0.22);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    }
+
+    .sombra-imagem {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.42), transparent 30%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.36));
+      pointer-events: none;
+    }
+
+    .secao-nicho {
+      background:
+        linear-gradient(180deg, #000000 0%, #0d0906 45%, #000000 100%);
+      padding: 70px 0 90px;
+    }
+
+    .card-nicho {
+      border-radius: 18px;
+      border: 1px solid rgba(197, 154, 98, 0.22);
+      background:
+        linear-gradient(145deg, rgba(10, 10, 10, 0.98), rgba(26, 18, 12, 0.95));
+      box-shadow: 0 0 28px rgba(116, 93, 62, 0.45);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .card-nicho:hover {
+      transform: translateY(-5px);
+      border-color: rgba(197, 154, 98, 0.5);
+      box-shadow: 0 0 48px rgba(160, 128, 86, 0.55);
+    }
+
+    .titulo-nicho {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: rgb(240, 236, 231);
+    }
+
+    .texto-nicho {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: #d4ccc3;
+      line-height: 1.55;
     }
 
     .animar-subindo {
       opacity: 0;
-      transform: translateY(60px);
-      animation: subirSuave 1.5s ease forwards;
+      transform: translateY(55px);
+      animation: subirSuave 1s ease forwards;
     }
 
     .delay-1 {
@@ -41,7 +214,7 @@
     @keyframes subirSuave {
       from {
         opacity: 0;
-        transform: translateY(60px);
+        transform: translateY(55px);
       }
 
       to {
@@ -50,144 +223,134 @@
       }
     }
 
-    .butao {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      background-color: rgb(116, 93, 62);
-      color: white;
-      margin-left: 25%;
+    @media (max-width: 991px) {
+      .hero {
+        padding: 45px 0;
+      }
+
+      .titulo-principal {
+        font-size: 3.1rem;
+      }
+
+      .subtitulo {
+        font-size: 1.1rem;
+      }
+
+      .imagem-box {
+        margin-top: 45px;
+        transform: translateY(0);
+      }
+
+      .nav-link {
+        margin-left: 0;
+      }
+
+      .nav-link.active::after {
+        display: none;
+      }
     }
-
-    .butao:hover {
-      background-color: rgb(116, 93, 62);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 0 45px rgba(206, 192, 177, 0.957);
-      border-color: #ac805a !important;
-    }
-
-    .card-nicho {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      box-shadow: 0 0 20px rgb(116, 93, 62);
-      color: white;
-      border-radius: 15px;
-    }
-
-    .card-nicho:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 45px rgba(160, 128, 86, 0.957);
-    }
-
-    .textonicho {
-      text-align: center;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    .texto {
-      color: rgb(240, 236, 231);
-      margin-top: 0%;
-    }
-
-    .imagem-hero {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .imagem-hero:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 35px rgba(206, 192, 177, 0.45);
-    }
-
-    .imagem-mais-alta {
-      transform: translateY(-47px);
-    }
-
-   .texto-mais-alto {
-     transform: translateY(-40px);
-    }    
-
-
   </style>
 </head>
 
-<body class="bg-black text-light">
+<body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-black sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">Essências de Nicho</a>
+<div class="pagina">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-dark sticky-top py-3">
+    <div class="container">
 
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto fs-4">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="perfumes.html">Perfumes</a></li>
-        <li class="nav-item"><a class="nav-link" href="marcas.html">Marcas</a></li>
-        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <a class="navbar-brand fw-bold fs-2" href="index.html">
+        Essências de Nicho
+      </a>
 
-<header class="fundo py-5">
-  <div class="container py-5">
-    <div class="row align-items-center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="col-lg-6 texto-mais-alto">
-        <h1 class="display-4 fw-bold animar-subindo delay-1">
-          Desbrave o Mundo de Perfumes de Nicho e Fragrâncias de Luxo
-        </h1>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto fs-4">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Início</a>
+          </li>
 
-        <br>
-        <br>
+          <li class="nav-item">
+            <a class="nav-link" href="perfumes.html">Perfumes</a>
+          </li>
 
-        <a href="perfumes.html" class="btn butao btn-lg animar-subindo delay-2">
-          Ver catálogo
-        </a>
-      </div>
+          <li class="nav-item">
+            <a class="nav-link" href="marcas.html">Marcas</a>
+          </li>
 
-      <div class="col-lg-6 mt-4 mt-lg-0 imagem-mais-alta">
-        <img 
-          src="./imagens/chatgpt.png" 
-          class="img-fluid rounded shadow imagem-hero animar-subindo delay-3" 
-          alt="Perfume de luxo">
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html">Sobre</a>
+          </li>
+        </ul>
       </div>
 
     </div>
-  </div>
-</header>
+  </nav>
 
-<br>
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center">
 
-<section class="py-4">
+        <div class="col-lg-6">
+
+          <div class="linha-decorativa animar-subindo delay-1"></div>
+
+          <h1 class="titulo-principal animar-subindo delay-2">
+            Desbrave o Mundo de <br>
+            <span class="dourado">Perfumes de Nicho</span> e <br>
+            Fragrâncias de Luxo
+          </h1>
+
+          <p class="subtitulo animar-subindo delay-3">
+            Descubra fragrâncias exclusivas, criadas com arte,
+            sofisticação e ingredientes raros.
+          </p>
+
+          <a href="perfumes.html" class="btn botao-catalogo animar-subindo delay-4">
+            Ver catálogo <span class="seta">→</span>
+          </a>
+
+        </div>
+
+        <div class="col-lg-6">
+          <div class="imagem-box animar-subindo delay-3">
+            <img
+              src="./imagens/chatgpt.png"
+              class="imagem-hero"
+              alt="Perfume de luxo em fundo escuro">
+            <div class="sombra-imagem"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+</div>
+
+<section class="secao-nicho">
   <div class="container">
     <div class="row justify-content-center">
 
-      <div class="col-lg-8 animar-subindo delay-4">
-        <div class="card bg-black text-light border-0 card-nicho">
-          <div class="card-body">
+      <div class="col-lg-8 animar-subindo delay-5">
+        <div class="card card-nicho text-light">
+          <div class="card-body p-5">
 
-            <br>
-
-            <h1 class="texto text-center">
+            <h1 class="titulo-nicho text-center mb-4">
               <b><i>O que seria um Perfume de Nicho?</i></b>
             </h1>
 
-            <br>
-            <br>
-
-            <h2 class="textonicho text-center">
-              Perfumes de nicho nada mais são do que uma categoria de perfume de alta qualidade,
-              com distribuição limitada, destinada ao consumo mais seletivo.
+            <h3 class="texto-nicho text-center">
+              Perfumes de nicho são uma categoria de fragrâncias de alta qualidade,
+              geralmente com distribuição mais limitada e voltadas para um público mais seletivo.
               <br>
               <br>
-              Os perfumes de nicho são concebidos para atender demandas específicas dos conhecedores
-              e amantes da perfumaria, que pertencem a um seleto grupo de pessoas exigentes, que além
-              da embalagem e do frasco valorizam o perfume.
-            </h2>
-
-            <br>
-            <br>
+              Eles são criados para pessoas que valorizam não apenas o frasco ou a marca,
+              mas também a composição, a originalidade e a experiência olfativa do perfume.
+            </h3>
 
           </div>
         </div>
@@ -197,11 +360,7 @@
   </div>
 </section>
 
-<br>
-<br>
-<br>
-
-<footer class="py-4 bg-black border-top border-secondary text-center animar-subindo delay-5">
+<footer class="py-4 bg-black border-top border-secondary text-center">
   <p class="mb-0 text-white">Essências de Nicho © — Catálogo informativo</p>
 </footer>
 
