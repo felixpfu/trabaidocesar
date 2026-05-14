@@ -180,6 +180,71 @@
       overflow: hidden;
     }
 
+
+    /* Fundos individuais das imagens */
+    .fundo-vibrato {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(72, 192, 67, 0.28), transparent 48%),
+        radial-gradient(circle at 50% 0%, rgba(197, 154, 98, 0.22), transparent 42%),
+        linear-gradient(180deg, #07120b 0%, #020403 100%);
+    }
+
+    .fundo-aventus {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(200, 205, 210, 0.22), transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(197, 154, 98, 0.12), transparent 40%),
+        linear-gradient(180deg, #0b0d0f 0%, #020202 100%);
+    }
+
+    .fundo-naxos {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255, 224, 140, 0.26), transparent 50%),
+        radial-gradient(circle at 70% 15%, rgba(120, 95, 35, 0.18), transparent 38%),
+        linear-gradient(180deg, #17120a 0%, #050403 100%);
+    }
+
+    .fundo-layton {
+      background:
+        radial-gradient(circle at 50% 44%, rgba(47, 104, 160, 0.38), transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(160, 205, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #06101c 0%, #020305 100%);
+    }
+
+    .fundo-ombre {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(170, 90, 33, 0.34), transparent 52%),
+        radial-gradient(circle at 50% 0%, rgba(197, 154, 98, 0.25), transparent 42%),
+        linear-gradient(180deg, #160c05 0%, #040201 100%);
+    }
+
+    .fundo-nishane {
+      background:
+        radial-gradient(circle at 50% 44%, rgba(255, 40, 40, 0.24), transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(255, 193, 92, 0.25), transparent 42%),
+        linear-gradient(180deg, #170505 0%, #040101 100%);
+    }
+
+    .fundo-tomford {
+      background:
+        radial-gradient(circle at 50% 44%, rgba(185, 185, 185, 0.18), transparent 48%),
+        radial-gradient(circle at 78% 20%, rgba(120, 20, 25, 0.20), transparent 40%),
+        linear-gradient(180deg, #080808 0%, #010101 100%);
+    }
+
+    .fundo-absolu {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255, 184, 66, 0.30), transparent 50%),
+        radial-gradient(circle at 72% 18%, rgba(75, 38, 95, 0.20), transparent 38%),
+        linear-gradient(180deg, #160c04 0%, #040201 100%);
+    }
+
+    .fundo-eros {
+      background:
+        radial-gradient(circle at 50% 43%, rgba(255, 45, 20, 0.35), transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(255, 154, 40, 0.22), transparent 42%),
+        linear-gradient(180deg, #170403 0%, #040101 100%);
+    }
+
     .imagem-card-luxo::before {
       content: "";
       position: absolute;
@@ -421,7 +486,7 @@
       <!-- Vibrato -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-vibrato">
             <img src="./imagens/vibrato.png" class="img-perfume-luxo" alt="Sospiro Vibrato">
           </div>
 
@@ -448,7 +513,7 @@
       <!-- Aventus -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-aventus">
             <img src="./imagens/aventus.png" class="img-perfume-luxo" alt="Aventus">
           </div>
 
@@ -475,7 +540,7 @@
       <!-- Naxos -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-naxos">
             <img src="./imagens/xerjoff.png" class="img-perfume-luxo" alt="Naxos">
           </div>
 
@@ -502,7 +567,7 @@
       <!-- Layton -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-layton">
             <img src="./imagens/marly.png" class="img-perfume-luxo" alt="Layton">
           </div>
 
@@ -529,7 +594,7 @@
       <!-- Ombre Nomade -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-ombre">
             <img src="./imagens/lvombre.png" class="img-perfume-luxo" alt="Ombre Nomade">
           </div>
 
@@ -556,7 +621,7 @@
       <!-- Hundred Silent Ways -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-nishane">
             <img src="./imagens/nishane.png" class="img-perfume-luxo" alt="Hundred Silent Ways">
           </div>
 
@@ -583,7 +648,7 @@
       <!-- Black Lacquer -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-tomford">
             <img src="./imagens/tomford.png" class="img-perfume-luxo" alt="Black Lacquer">
           </div>
 
@@ -610,7 +675,7 @@
       <!-- Elixir Absolu -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-absolu">
             <img src="./imagens/absolu.png" class="img-perfume-luxo" alt="Elixir Absolu">
           </div>
 
@@ -637,7 +702,7 @@
       <!-- Eros Flame -->
       <div class="col-md-6 col-lg-4 perfume-item">
         <div class="card card-catalogo h-100">
-          <div class="imagem-card-luxo">
+          <div class="imagem-card-luxo fundo-eros">
             <img src="./imagens/erosflame.png" class="img-perfume-luxo" alt="Eros Flame">
           </div>
 
