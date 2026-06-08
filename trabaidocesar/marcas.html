@@ -8,6 +8,45 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    body {
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.96);
+    }
+
+    .navbar-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #c59a62 !important;
+      letter-spacing: 0.4px;
+    }
+
+    .nav-link {
+      color: #a7a7a7 !important;
+      margin-left: 22px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 2px;
+      height: 2px;
+      background: #c59a62;
+      border-radius: 20px;
+    }
+
     .animar-subindo {
       opacity: 0;
       transform: translateY(55px);
@@ -89,21 +128,31 @@
       filter: saturate(100%);
       transform: scale(1.03);
     }
+
+    @media (max-width: 991px) {
+      .nav-link {
+        margin-left: 0;
+      }
+
+      .nav-link.active::after {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-black text-light">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark border-bottom border-dark sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">Essências de Nicho</a>
+    <a class="navbar-brand fw-bold fs-2" href="index.html">Essências de Nicho</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse fs-4" id="menu">
-      <ul class="navbar-nav ms-auto">
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto fs-4">
         <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
         <li class="nav-item"><a class="nav-link" href="perfumes.html">Perfumes</a></li>
         <li class="nav-item"><a class="nav-link active" href="marcas.html">Marcas</a></li>
